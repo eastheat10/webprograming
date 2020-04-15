@@ -8,8 +8,8 @@
 </head>
 <body>
 <%
-String s2 = request.getParameter("number");
-int number = (s2 == null) ? 0 : (Integer.parseInt(s2)+1);
+String s = request.getParameter("number");
+int number = (s == null) ? 0 : (Integer.parseInt(s)+1);
 %>
    <div class="container">
       <form action = "form1.jsp" method = "get">
