@@ -10,6 +10,7 @@ public class User {
     String departmentName;
     boolean enabled;
     String userType;
+
 	public int getId() {
 		return id;
 	}
