@@ -11,7 +11,7 @@ public class DB {
 
     static DataSource dataSource = null;
 
-    public static Connection getConnection(String databaseName) throws SQLException, NamingException {
+    public static Connection getConnection(String databaseName) throws SQLException, NamingException  {
         if (dataSource == null) {
             InitialContext context = new InitialContext();
             dataSource = (DataSource)context.lookup("java:comp/env/jdbc/" + databaseName);

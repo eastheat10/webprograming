@@ -48,17 +48,13 @@ td:nth-child(4) {
 </style>
 </head>
 <body>
-
 	<div class="container">
-
 		<h1>학생목록</h1>
-
 		<form>
 			<label>이름</label> <input type="text" name="srchText"
 				value="<%=srchText%>" placeholder="검색조건" />
 			<button type="submit">조회</button>
 		</form>
-
 		<table>
 			<thead>
 				<tr>
@@ -74,7 +70,7 @@ td:nth-child(4) {
 				%>
 				<tr>
 					<td><%=student.getStudentNumber()%></td>
-					<td><%=student.getName()%></td>
+					<td><a href="student2.jsp?id=<%=student.getId()%>"><%=student.getName()%></a></td>
 					<td><%=student.getDepartmentName()%></td>
 					<td><%=student.getYear()%></td>
 				</tr>
@@ -83,7 +79,6 @@ td:nth-child(4) {
 				%>
 			</tbody>
 		</table>
-
 		<a href="javascript:window.history.back()" class="btn btn-info">돌아가기</a>
 	</div>
 </body>

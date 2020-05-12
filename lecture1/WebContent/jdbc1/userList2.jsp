@@ -74,7 +74,7 @@ td:nth-child(4) {
 				%>
 				<tr>
 					<td><%=user.getUserid()%></td>
-					<td><%=user.getName()%></td>
+					<td><a href="user1.jsp?id=<%=user.getId()%>"><%=user.getName()%></td>
 					<td><%=user.getEmail()%></td>
 					<td><%=user.getDepartmentName()%></td>
 					<td><%=user.getUserType()%></td>

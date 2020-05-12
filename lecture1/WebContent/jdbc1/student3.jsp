@@ -2,9 +2,9 @@
 	pageEncoding="UTF-8"%>
 <%@ page import="java.util.List, lecture1.jdbc1.*"%>
 <%
-	int id = 4;
+	String s = request.getParameter("id");
+	int id = s==null ? 1 : Integer.parseInt(s);
 	Student student = StudentDAO5.findById(id);
-	
 %>
 <!DOCTYPE html>
 <html>
@@ -40,6 +40,13 @@ td {
 	<div class="container">
 
 		<h1>학생</h1>
+		<form>
+		<div>
+			<label>학번</label>
+			<input type="text" name="id" value="<%= id %>">
+			<button type="submit">확인</button>
+		</div>
+		
 
 		<table>
 			<tr>
@@ -65,5 +72,6 @@ td {
 		</table>
 
 	</div>
+	</form>
 </body>
 </html>

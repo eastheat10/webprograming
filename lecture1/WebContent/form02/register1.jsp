@@ -5,7 +5,7 @@ String name = "";
 String password1;
 String password2;
 String email = "";
-int department;
+int department=1;
 String 에러메시지 = null;
 request.setCharacterEncoding("UTF-8");
 if (request.getMethod().equals("POST")) {
@@ -86,7 +86,7 @@ if (request.getMethod().equals("POST")) {
   </div>
   <div>
     <label>학과</label>
-    <select name="departmen t">
+    <select name="department">
       <option value="1">소프트웨어공학과</option>
       <option value="2">컴퓨터공학과</option>
       <option value="3">정보통신공학과</option>
