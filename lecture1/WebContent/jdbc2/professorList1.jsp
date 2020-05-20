@@ -27,7 +27,7 @@ a.btn {
 <body>
 	<div class="container">
 		<h1>교수목록</h1>
-		<a class="btn" href="professorCreate1.jsp">교수등록</a>
+		<a class="btn" href="professorCreate.jsp">교수등록</a>
 		<table class="table">
 			<thead>
 				<tr>
@@ -43,7 +43,7 @@ a.btn {
 				%>
 				<tr>
 					<td><%=professor.getId()%></td>
-					<td><%=professor.getName()%></td>
+					<td><%=professor.getProfessorName()%></td>
 					<td><%=professor.getDepartmentName()%></td>
 				</tr>
 				<%

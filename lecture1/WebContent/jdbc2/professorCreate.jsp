@@ -53,7 +53,7 @@ input[name=year] {
 			
 			<div>
 				<label>이름</label> <input type="text" name="name"
-					value="${ professor.name }" />
+					value="${ professor.professorName }" />
 			</div>
 			<div>
 				<label>학과</label> <select name="departmentId">
@@ -79,13 +79,13 @@ input[name=year] {
 				<button type="submit" class="btn">
 					<i class="fas fa-check"></i> 저장
 				</button>
-				<a class="btn" href="studentList1.jsp"><i class="fas fa-ban"></i>
+				<a class="btn" href="professorList1.jsp"><i class="fas fa-ban"></i>
 					취소</a>
 			</div>
 			<%
 				if (errorMessage != null) {
 			%>
-			<div class="error">
+			<div class = "error">
 				저장 실패:
 				<%= errorMessage%></div>
 			<%
