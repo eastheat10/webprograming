@@ -43,7 +43,7 @@ td, th {
 			</tr>
 			<tr>
 				<td>이름</td>
-				<td><%=professor.getName()%></td>
+				<td><%=professor.getProfessorName()%></td>
 			</tr>
 			<tr>
 				<td>학과</td>

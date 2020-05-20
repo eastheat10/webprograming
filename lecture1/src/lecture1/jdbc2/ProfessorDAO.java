@@ -16,6 +16,7 @@ public class ProfessorDAO {
 		professor.setId(resultSet.getInt("id"));
 		professor.setProfessorName(resultSet.getString("professorName"));
 		professor.setDepartmentId(resultSet.getInt("departmentId"));
+		professor.setDepartmentName(resultSet.getString("departmentName"));
 		return professor;
 	}
 
@@ -50,11 +51,12 @@ public class ProfessorDAO {
 	}
 
 	public static void insert(Professor professor) throws Exception {
-		String sql = "INSERT professor (professorName, departmentId)" + " VALUES (?, ?)";
+		String sql = "INSERT professor (id, professorName, departmentId)" + " VALUES (?, ?, ?)";
 		try (Connection connection = DB.getConnection("professor");
 				PreparedStatement statement = connection.prepareStatement(sql)) {
-			statement.setString(1, professor.getProfessorName());
-			statement.setInt(2, professor.getDepartmentId());
+			statement.setInt(1, professor.getId());
+			statement.setString(2, professor.getProfessorName());
+			statement.setInt(3, professor.getDepartmentId());
 			statement.executeUpdate();
 		}
 	}

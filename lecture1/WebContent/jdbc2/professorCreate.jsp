@@ -9,7 +9,7 @@
 <%
 	String errorMessage = null;
 	if (request.getMethod().equals("POST")) {
-		//errorMessage = ProfessorService1.insert(professor);
+		errorMessage = ProfessorService1.insert(professor);
 		if (errorMessage == null) {
 			response.sendRedirect("professorList1.jsp");
 			return;
@@ -52,8 +52,10 @@ input[name=year] {
 			<h1>교수 등록</h1>
 			
 			<div>
-				<label>이름</label> <input type="text" name="name"
-					value="${ professor.professorName }" />
+				<label>ID</label> <input type="text" name="id" value="${ professor.id }" />
+			</div>
+			<div>
+				<label>이름</label> <input type="text" name="professorName" value="${ professor.professorName }" />
 			</div>
 			<div>
 				<label>학과</label> <select name="departmentId">
