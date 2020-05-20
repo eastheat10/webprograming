@@ -2,7 +2,7 @@ package lecture1.jdbc2;
 
 public class Professor {
 	int id;
-	String name;
+	String professorName;
 	int departmentId;
 	String departmentName;
 
@@ -14,12 +14,12 @@ public class Professor {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getProfessorName() {
+		return professorName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setProfessorName(String professorName) {
+		this.professorName = professorName;
 	}
 
 	public int getDepartmentId() {

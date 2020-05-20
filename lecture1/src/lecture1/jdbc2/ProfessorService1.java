@@ -10,7 +10,7 @@ public class ProfessorService1 {
 	public static String validate(Professor professor) throws Exception {
 		if (StringUtil.isEmptyOrBlank(Integer.toString(professor.getId())))
 			return ID_필수;
-		if (StringUtil.isEmptyOrBlank(professor.getName()))
+		if (StringUtil.isEmptyOrBlank(professor.getProfessorName()))
 			return 이름_필수;
 		return null;
 	}
