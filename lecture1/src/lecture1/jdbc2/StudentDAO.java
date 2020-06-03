@@ -22,8 +22,7 @@ public class StudentDAO {
 	}
 
 	public static List<Student> findAll() throws Exception {
-		String sql = "SELECT s.*, d.departmentName " +
-					 "FROM student s LEFT JOIN department d ON s.departmentId = d.id";
+		String sql = "SELECT s.*, d.departmentName " + "FROM student s LEFT JOIN department d ON s.departmentId = d.id";
 		try (Connection connection = DB.getConnection("student1");
 				PreparedStatement statement = connection.prepareStatement(sql);
 				ResultSet resultSet = statement.executeQuery()) {
@@ -35,8 +34,7 @@ public class StudentDAO {
 	}
 
 	public static Student findByStudentNumber(String studentNumber) throws Exception {
-		String sql = "SELECT s.*, d.departmentName " +
-					 "FROM student s LEFT JOIN department d ON s.departmentId = d.id"
+		String sql = "SELECT s.*, d.departmentName " + "FROM student s LEFT JOIN department d ON s.departmentId = d.id"
 				+ " WHERE s.studentNumber = ?";
 		try (Connection connection = DB.getConnection("student1");
 				PreparedStatement statement = connection.prepareStatement(sql)) {
@@ -51,9 +49,8 @@ public class StudentDAO {
 	}
 
 	public static Student findById(int id) throws Exception {
-		String sql = "SELECT s.*, d.departmentName " +
-					 "FROM student s LEFT JOIN department d ON s.departmentId = d.id " +
-					 "WHERE s.id = ?";
+		String sql = "SELECT s.*, d.departmentName " + "FROM student s LEFT JOIN department d ON s.departmentId = d.id "
+				+ "WHERE s.id = ?";
 		try (Connection connection = DB.getConnection("student1");
 				PreparedStatement statement = connection.prepareStatement(sql)) {
 			statement.setInt(1, id);
@@ -67,8 +64,7 @@ public class StudentDAO {
 	}
 
 	public static void insert(Student student) throws Exception {
-		String sql = "INSERT student (studentNumber, name, departmentId, year) " +
-					 "VALUES (?, ?, ?, ?)";
+		String sql = "INSERT student (studentNumber, name, departmentId, year) " + "VALUES (?, ?, ?, ?)";
 		try (Connection connection = DB.getConnection("student1");
 				PreparedStatement statement = connection.prepareStatement(sql)) {
 			statement.setString(1, student.getStudentNumber());
@@ -80,8 +76,7 @@ public class StudentDAO {
 	}
 
 	public static void update(Student student) throws Exception {
-		String sql = "UPDATE student SET studentNumber=?, name=?, departmentId=?, year=? " +
-					 "WHERE id = ?";
+		String sql = "UPDATE student SET studentNumber=?, name=?, departmentId=?, year=? " + "WHERE id = ?";
 		try (Connection connection = DB.getConnection("student1");
 				PreparedStatement statement = connection.prepareStatement(sql)) {
 			statement.setString(1, student.getStudentNumber());
@@ -89,6 +84,15 @@ public class StudentDAO {
 			statement.setInt(3, student.getDepartmentId());
 			statement.setInt(4, student.getYear());
 			statement.setInt(5, student.getId());
+			statement.executeUpdate();
+		}
+	}
+
+	public static void delete(int id) throws Exception {
+		String sql = "DELETE FROM student WHERE id = ?";
+		try (Connection connection = DB.getConnection("student1");
+				PreparedStatement statement = connection.prepareStatement(sql)) {
+			statement.setInt(1, id);
 			statement.executeUpdate();
 		}
 	}
