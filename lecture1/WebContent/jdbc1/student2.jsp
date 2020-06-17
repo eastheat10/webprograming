@@ -63,7 +63,7 @@ td {
 				<td><%=student.getYear()%></td>
 			</tr>
 		</table>
-
+	<a href = "javascript:window.history.back()" class=btn-info>돌아가기</a>
 	</div>
 </body>
 </html>
